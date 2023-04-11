@@ -5,9 +5,11 @@ const getAllDistricts = async () => {
 };
 
 const getDistricts = async (id) => {
-  return await getDB().districts.findOne({
-    district_id: id,
-  });
+  return await getDB()
+    .districts.find({
+      state_id: id,
+    })
+    .toArray();
 };
 
 module.exports = {

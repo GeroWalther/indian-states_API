@@ -10,7 +10,6 @@ router.get("/", async (req, res) => {
 router.get("/:byId", async (req, res) => {
   try {
     const district = await getDistricts(req.params.byId);
-
     if (!district) {
       res.status(404).send({ status: "FAILED", data: "district not found" });
       return;
